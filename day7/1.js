@@ -1,18 +1,28 @@
 const lib = require("../lib");
 
-const rulesMap = lib.readFileToArray("./input.txt");
+const rulesMap = lib.readFileToArray("./input.txt").filter(r => r !== '' && !r.includes('no other bags'));
 
-let numberOfBags = 0;
+const desiredColor = 'shiny gold';
+const colors = new Set()
 
-for (const rule of rulesMap) {
-  if (rule === "") continue;
+function getColor(str) {
+  return str.replace('bags', '').trim()
+}
 
-  const [outerBag, innerBags] = rule.split(" contain ");
+function searchForColor(rules, color) {
+  for (let i = 0; i < rules.length; i++) {
+    const [outerBag, innerBags] = rules[i].split(" contain ");
+    const outerColor = getColor(outerBag);
 
-  if (innerBags.match(/shiny gold/)) {
-    console.log(outerBag, innerBags);
-    numberOfBags++;
+    if (colors.has(outerColor)) continue
+
+    if (innerBags.includes(color)) {
+      colors.add(outerColor)
+      searchForColor(rules, outerColor)
+    }
   }
 }
 
-console.log(numberOfBags);
+searchForColor(rulesMap, desiredColor);
+
+console.log(colors.size)
