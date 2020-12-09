@@ -24,4 +24,4 @@ for (let i = 0; i < expenses.length; i++) {
   }
 }
 
-console.log(result);
+console.log(`Part One: ${result}`);

@@ -21,4 +21,4 @@ for (let i = 0; i < passwordsAndRules.length; i++) {
   }
 }
 
-console.log(`${validPasswords} out of ${passwordsAndRules.length}`);
+console.log(`Part One: ${validPasswords}`);

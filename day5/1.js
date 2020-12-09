@@ -54,6 +54,7 @@ for (const ticket of tickets) {
 }
 
 const seatsMapSorted = seatsMap.sort((a, b) => a - b);
+console.log(`Part One: ${seatsMapSorted[seatsMapSorted.length - 1]}`);
 
 const ticketsBackfill = [];
 
@@ -67,7 +68,7 @@ for (
 
 for (let i = 0; i < ticketsBackfill.length; i++) {
   if (seatsMapSorted[i] !== ticketsBackfill[i]) {
-    console.log(ticketsBackfill[i]);
+    console.log(`Part Two: ${ticketsBackfill[i]}`);
     break;
   }
 }

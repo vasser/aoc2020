@@ -39,4 +39,4 @@ for (const [stepRight, stepDown] of slopes) {
   indexRow = 0;
 }
 
-console.log(treesPerSloap.reduce((accum, i) => accum * i));
+console.log(`Part Two: ${treesPerSloap.reduce((accum, i) => accum * i)}`);

@@ -71,4 +71,4 @@ for (let indexRow = 0; indexRow < passports.length; indexRow++) {
   }
 }
 
-console.log(validPassports);
+console.log(`Part Two: ${validPassports}`);

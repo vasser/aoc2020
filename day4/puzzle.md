@@ -9,6 +9,7 @@ It seems like you're not the only one having problems, though; a very long line 
 Due to some questionable network security, you realize you might be able to solve both of these problems at the same time.
 
 The automatic passport scanners are slow because they're having trouble detecting which passports have all required fields. The expected fields are as follows:
+
 ```
 byr (Birth Year)
 iyr (Issue Year)
@@ -19,9 +20,11 @@ ecl (Eye Color)
 pid (Passport ID)
 cid (Country ID)
 ```
+
 Passport data is validated in batch files (your puzzle input). Each passport is represented as a sequence of key:value pairs separated by spaces or newlines. Passports are separated by blank lines.
 
 Here is an example batch file containing four passports:
+
 ```
 ecl:gry pid:860033327 eyr:2020 hcl:#fffffd
 byr:1937 iyr:2017 cid:147 hgt:183cm
@@ -37,6 +40,7 @@ hgt:179cm
 hcl:#cfa07d eyr:2025 pid:166559648
 iyr:2011 ecl:brn hgt:59in
 ```
+
 The first passport is valid - all eight fields are present. The second passport is invalid - it is missing hgt (the Height field).
 
 The third passport is interesting; the only missing field is cid, so it looks like data from North Pole Credentials, not a passport at all! Surely, nobody would mind if you made the system temporarily ignore missing cid fields. Treat this "passport" as valid.
@@ -60,11 +64,12 @@ You can continue to ignore the cid field, but each other field has strict rules 
   - If `cm`, the number must be at least 150 and at most 193.
   - If `in`, the number must be at least 59 and at most 76.
 - `hcl` (Hair Color) - a # followed by exactly six characters 0-9 or a-f.
-- `ecl` (Eye Color) - exactly one of: ```amb blu brn gry grn hzl oth```.
+- `ecl` (Eye Color) - exactly one of: `amb blu brn gry grn hzl oth`.
 - `pid` (Passport ID) - a nine-digit number, including leading zeroes.
 - `cid` (Country ID) - ignored, missing or not.
 
 Your job is to count the passports where all required fields are both present and valid according to the above rules. Here are some example values:
+
 ```
 byr valid: 2002
 byr invalid: 2003

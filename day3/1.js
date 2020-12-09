@@ -25,4 +25,4 @@ while (indexRow < rowsInMap) {
   treesOnTheRoad = getTree(roadList[indexRow][indexLine]);
 }
 
-console.log(treesOnTheRoad);
+console.log(`Part One: ${treesOnTheRoad}`);

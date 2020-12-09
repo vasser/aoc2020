@@ -23,4 +23,4 @@ for (let i = 0; i < answersList.length; i++) {
   }
 }
 
-console.log(sumOfCounts);
+console.log(`Part One: ${sumOfCounts}`);
