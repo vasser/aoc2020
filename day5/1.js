@@ -1,6 +1,6 @@
 const lib = require("../lib");
 
-const ticketsMap = lib.readFileToArray("./input.txt");
+const tickets = lib.readFileToArray("./input.txt");
 
 const rows = 128;
 const columns = 8;
@@ -39,7 +39,7 @@ function handleColumns(colsMarkers) {
   }
 }
 
-for (const ticket of ticketsMap) {
+for (const ticket of tickets) {
   if (ticket === "") continue;
 
   resetRanges();

@@ -1,14 +1,14 @@
 const lib = require("../lib");
 
-const answersMap = lib.readFileToArray("./input.txt");
+const answersList = lib.readFileToArray("./input.txt");
 
 let answersInBlock = [];
 
 let sumOfCounts = 0;
 let least = "";
 
-for (let i = 0; i < answersMap.length; i++) {
-  if (answersMap[i].length === 0) {
+for (let i = 0; i < answersList.length; i++) {
+  if (answersList[i].length === 0) {
     for (const l of least) {
       if (answersInBlock.every((elem) => elem.split("").includes(l))) {
         sumOfCounts++;
@@ -18,10 +18,10 @@ for (let i = 0; i < answersMap.length; i++) {
     answersInBlock = [];
     least = "";
   } else {
-    answersInBlock.push(answersMap[i]);
+    answersInBlock.push(answersList[i]);
 
-    if (!least || answersMap[i].length < least.length) {
-      least = answersMap[i];
+    if (!least || answersList[i].length < least.length) {
+      least = answersList[i];
     }
   }
 }

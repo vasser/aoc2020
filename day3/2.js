@@ -1,9 +1,9 @@
 const lib = require("../lib");
 
-const roadMap = lib.readFileToArray("./input.txt");
+const roadList = lib.readFileToArray("./input.txt");
 
-const rowsInMap = roadMap.length - 1;
-const lineLength = roadMap[0].length;
+const rowsInMap = roadList.length - 1;
+const lineLength = roadList[0].length;
 
 const slopes = [
   [1, 1],
@@ -28,7 +28,7 @@ for (const [stepRight, stepDown] of slopes) {
     indexRow += stepDown;
 
     treesOnTheRoad =
-      roadMap[indexRow][indexLine] === "#"
+      roadList[indexRow][indexLine] === "#"
         ? treesOnTheRoad + 1
         : treesOnTheRoad;
   }

@@ -1,6 +1,6 @@
 const lib = require("../lib");
 
-const rulesMap = lib.readFileToArray("./input.txt").filter(r => r !== '' && !r.includes('no other bags'));
+const rulesList = lib.readFileToArray("./input.txt").filter(r => r !== '' && !r.includes('no other bags'));
 
 const desiredColor = 'shiny gold';
 const colors = new Set()
@@ -23,6 +23,6 @@ function searchForColor(rules, color) {
   }
 }
 
-searchForColor(rulesMap, desiredColor);
+searchForColor(rulesList, desiredColor);
 
 console.log(colors.size)

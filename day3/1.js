@@ -1,9 +1,9 @@
 const lib = require("../lib");
 
-const roadMap = lib.readFileToArray("./input.txt");
+const roadList = lib.readFileToArray("./input.txt");
 
-const rowsInMap = roadMap.length - 1;
-const lineLength = roadMap[0].length;
+const rowsInMap = roadList.length - 1;
+const lineLength = roadList[0].length;
 const stepRight = 3;
 const stepDown = 1;
 
@@ -22,7 +22,7 @@ while (indexRow < rowsInMap) {
       : indexLine + stepRight - lineLength;
   indexRow += stepDown;
 
-  treesOnTheRoad = getTree(roadMap[indexRow][indexLine]);
+  treesOnTheRoad = getTree(roadList[indexRow][indexLine]);
 }
 
 console.log(treesOnTheRoad);

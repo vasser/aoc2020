@@ -15,8 +15,8 @@ for (let i = 0; i < passwordsAndRules.length; i++) {
   const [rangeMin, rangeMax] = range.split("-");
 
   const re = new RegExp(symbol, "g");
-  const occurances = (password.match(re) || []).length;
-  if (rangeMin <= occurances && occurances <= rangeMax) {
+  const matches = (password.match(re) || []).length;
+  if (rangeMin <= matches && matches <= rangeMax) {
     validPasswords++;
   }
 }

@@ -1,6 +1,6 @@
 const lib = require("../lib");
 
-const answersMap = lib.readFileToArray("./input.txt");
+const answersList = lib.readFileToArray("./input.txt");
 
 let answersSet = new Set();
 
@@ -14,12 +14,12 @@ function union(setA, setB) {
 
 let sumOfCounts = 0;
 
-for (let i = 0; i < answersMap.length; i++) {
-  if (answersMap[i].length === 0) {
+for (let i = 0; i < answersList.length; i++) {
+  if (answersList[i].length === 0) {
     sumOfCounts += answersSet.size;
     answersSet = new Set();
   } else {
-    answersSet = union(answersSet, new Set(answersMap[i].split("")));
+    answersSet = union(answersSet, new Set(answersList[i].split("")));
   }
 }
 

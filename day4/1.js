@@ -1,6 +1,6 @@
 const lib = require("../lib");
 
-const passportsMap = lib.readFileToArray("./input.txt");
+const passports = lib.readFileToArray("./input.txt");
 
 let passportData = [];
 let validPassports = 0;
@@ -62,12 +62,12 @@ function handlePassport() {
   }
 }
 
-for (let indexRow = 0; indexRow < passportsMap.length; indexRow++) {
-  if (passportsMap[indexRow].length === 0) {
+for (let indexRow = 0; indexRow < passports.length; indexRow++) {
+  if (passports[indexRow].length === 0) {
     handlePassport();
     passportData = [];
   } else {
-    passportData.push(passportsMap[indexRow]);
+    passportData.push(passports[indexRow]);
   }
 }
 
