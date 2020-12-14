@@ -1,9 +1,8 @@
 const lib = require("../lib");
 
 const codes = lib
-  .readFileToArray("./input.txt")
-  .filter((l) => l !== "")
-  .map((l) => parseInt(l));
+  .readFileToArrayOfIntegers("./input.txt")
+  .filter((l) => l !== "");
 
 const step = 25;
 let numberWithoutPairs;
